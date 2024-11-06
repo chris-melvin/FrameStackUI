@@ -14,7 +14,9 @@ export const Navbar = () => {
         </p>
       </div>
 
-      <Image src={Github} alt="GitHub" />
+      <Link href="https://github.com/chris-melvin/FrameStackUI">
+        <Image src={Github} alt="GitHub" />
+      </Link>
     </nav>
   );
 };
