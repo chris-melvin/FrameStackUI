@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FrameStackUI
+
+FrameStackUI is a free collection of TailwindCSS components designed to help you build beautiful, responsive websites faster. Whether you're designing a landing page, an e-commerce site, or a blog, this collection provides the essential components to get started.
+
+## Features
+
+- 🎨 Modern, responsive design
+- 🔧 Built with TailwindCSS and Next.js
+- 📱 Mobile-first approach
+- 🎯 Container queries support
+- 🌗 Dark mode support
+- ⚡ Interactive component previews
+- 📋 Copy-paste ready code
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/chris-melvin/FrameStackUI.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Components
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Cards
 
-## Learn More
+- Basic Card
+- Profile Card
+- Interactive Card
+- Image Card
+- Highlight Card
 
-To learn more about Next.js, take a look at the following resources:
+### Layouts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Image Grid
+- Bento Grid
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+- Next.js 14
+- React 18
+- TailwindCSS
+- TypeScript
+- Lucide Icons
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+FrameStackUI/
+├── app/ # Next.js app directory
+├── components/ # React components
+│ ├── ui/ # UI components
+│ └── types/ # TypeScript types
+├── public/ # Static assets
+└── styles/ # Global styles
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is open source and available under the MIT License.
+
+## Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [TailwindCSS](https://tailwindcss.com/)
+- Icons from [Lucide](https://lucide.dev/)
