@@ -104,13 +104,7 @@ export function ComponentDisplay({
               maxWidth: "100%",
             }}
           >
-            <div
-              className={
-                currentSize.name !== "Full" ? "scale-[1] w-full" : "w-full"
-              }
-            >
-              {children}
-            </div>
+            {children}
           </div>
         </div>
       )}
