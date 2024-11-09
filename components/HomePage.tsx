@@ -20,10 +20,10 @@ export const HomePage = () => {
           count={2}
         />
         <Card
-          title="Image Grid"
+          title="Grid"
           description="A grid of images"
           href="/grid"
-          count={1}
+          count={2}
         />
       </div>
     </section>

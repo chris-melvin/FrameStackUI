@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Copy, Code } from "lucide-react";
+import { CodeHighlight } from "./CodeHighlight";
 
 interface ComponentDisplayProps {
   children: React.ReactNode;
@@ -27,11 +28,13 @@ export function ComponentDisplay({
   const [currentSize, setCurrentSize] = useState(viewportSizes[3]); // Default to full width
   const [codeType, setCodeType] = useState<"html" | "jsx">("jsx");
   const [showCode, setShowCode] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const copyCode = async () => {
     const codeToCopy = codeType === "html" ? htmlCode : jsxCode;
     await navigator.clipboard.writeText(codeToCopy);
-    // You might want to add a toast notification here
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 3000);
   };
 
   return (
@@ -49,9 +52,7 @@ export function ComponentDisplay({
               key={size.name}
               onClick={() => setCurrentSize(size)}
               className={`px-3 py-1 rounded ${
-                currentSize.name === size.name
-                  ? "bg-primary text-white"
-                  : "bg-gray-100"
+                currentSize.name === size.name ? "border" : "bg-gray-100"
               }`}
             >
               {size.name}
@@ -81,37 +82,46 @@ export function ComponentDisplay({
 
           <button onClick={copyCode} className="flex items-center gap-1">
             <Copy size={16} />
-            <span className="hidden md:block">Copy Code</span>
+            <span className="hidden md:block">
+              {isCopied ? "Copied!" : "Copy Code"}
+            </span>
           </button>
         </div>
       </div>
 
       {/* Component Preview */}
-      <div className="border rounded-lg p-4 overflow-auto">
-        <div
-          className={`mx-auto transition-all duration-200 @container flex justify-center p-4 ${
-            currentSize.name !== "Full" ? "border-2 rounded-lg shadow-lg" : ""
-          }`}
-          style={{
-            width: currentSize.width,
-            height: "auto",
-            overflow: "auto",
-            // resize: currentSize.name === "Full" ? "none" : "both",
-            maxWidth: "100%",
-          }}
-        >
-          <div className={currentSize.name !== "Full" ? "scale-[1] " : ""}>
-            {children}
+      {!showCode && (
+        <div className="border rounded-lg p-4 overflow-auto">
+          <div
+            className={`mx-auto transition-all duration-200 @container flex justify-center p-4 ${
+              currentSize.name !== "Full" ? "border-2 rounded-lg shadow-lg" : ""
+            }`}
+            style={{
+              width: currentSize.width,
+              height: "auto",
+              overflow: "auto",
+              resize: currentSize.name === "Full" ? "none" : "both",
+              maxWidth: "100%",
+            }}
+          >
+            <div
+              className={
+                currentSize.name !== "Full" ? "scale-[1] w-full" : "w-full"
+              }
+            >
+              {children}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Code Display */}
       {showCode && (
         <div className="border rounded-lg p-4 bg-gray-50">
-          <pre className="overflow-x-auto">
-            <code>{codeType === "html" ? htmlCode : jsxCode}</code>
-          </pre>
+          <CodeHighlight
+            code={codeType === "html" ? htmlCode : jsxCode}
+            language={codeType === "html" ? "markup" : "jsx"}
+          />
         </div>
       )}
     </div>
