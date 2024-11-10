@@ -26,3 +26,10 @@ export function BasicCard({
     </div>
   );
 }
+
+export const BasicCardCode = `
+<div className="rounded-lg border max-w-sm bg-card text-card-foreground shadow-sm transition-colors dark:bg-gray-800 p-6">
+  <h3 className="text-lg font-semibold">title</h3>
+  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Card Description</p>
+</div>
+`;
