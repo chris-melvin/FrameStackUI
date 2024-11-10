@@ -1,13 +1,14 @@
 import { ComponentDisplay } from "@/components/ComponentDisplay";
-import { BasicCard } from "@/components/ui/BasicCard";
+import { BasicCard, BasicCardCode } from "@/components/ui/BasicCard";
 import { ProfileCard } from "@/components/ui/ProfileCard";
+import { convertJsxToHtml } from "@/utils/codeConverter";
 
 export default function Cards() {
   return (
     <div className="max-w-screen-2xl mx-auto px-4 space-y-4">
       <ComponentDisplay
-        htmlCode={""}
-        jsxCode={""}
+        htmlCode={convertJsxToHtml(BasicCardCode)}
+        jsxCode={BasicCardCode}
         title={"Card"}
         description={"A card with a title and description"}
       >

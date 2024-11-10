@@ -25,6 +25,12 @@ export const HomePage = () => {
           href="/grid"
           count={2}
         />
+        <Card
+          title="Buttons"
+          description="A collection of buttons with different styles"
+          href="/buttons"
+          count={3}
+        />
       </div>
     </section>
   );
