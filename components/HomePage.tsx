@@ -31,6 +31,12 @@ export const HomePage = () => {
           href="/buttons"
           count={3}
         />
+        <Card
+          title="Inputs"
+          description="A collection of inputs with different styles"
+          href="/inputs"
+          count={3}
+        />
       </div>
     </section>
   );
