@@ -41,7 +41,13 @@ export const HomePage = () => {
           title="Forms"
           description="A collection of forms with different styles"
           href="/forms"
-          count={3}
+          count={1}
+        />
+        <Card
+          title="Banners"
+          description="A collection of banners with different styles"
+          href="/banners"
+          count={2}
         />
       </div>
     </section>
@@ -68,9 +74,7 @@ const Card = ({
         {count && (
           <p className="text-sm text-gray-500 mt-2">
             {count}{" "}
-            <span className="hidden md:inline">
-              {count > 1 ? "components" : "component"}
-            </span>
+            <span className="">{count > 1 ? "components" : "component"}</span>
           </p>
         )}
       </div>
