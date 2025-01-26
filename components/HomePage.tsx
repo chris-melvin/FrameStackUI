@@ -17,7 +17,7 @@ export const HomePage = () => {
           title="Cards"
           description="A collection of cards with different styles"
           href="/cards"
-          count={2}
+          count={4}
         />
         <Card
           title="Grid"
